@@ -24,6 +24,7 @@ export class HomePage {
   items: any =[];
    allData:any=[] ;
   data:any;
+  
   constructor(public navCtrl: NavController,public navParams: NavParams, public generalProvider: GeneralDataProvider) {
 
 
