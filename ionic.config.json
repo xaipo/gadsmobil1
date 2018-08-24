@@ -1,0 +1,7 @@
+{
+  "name": "gads",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
