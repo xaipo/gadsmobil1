@@ -14,10 +14,15 @@ import {GaleriaPage} from "../pages/galeria/galeria";
 import {GastronomiaPage} from "../pages/gastronomia/gastronomia";
 import {HistoriaPage} from "../pages/historia/historia";
 import {TurismoPage} from "../pages/turismo/turismo";
+import {FiestasPage} from "../pages/fiestas/fiestas";
+import {MenuPage} from "../pages/menu/menu";
+import {InicioPage} from "../pages/inicio/inicio";
 import { GeneralDataProvider } from '../providers/general-data/general-data';
 import { Geolocation } from '@ionic-native/geolocation';
 import { DataProvider } from '../providers/data/data';
 import { HttpClientModule } from '@angular/common/http';
+
+import { NativeStorage } from '@ionic-native/native-storage';
 @NgModule({
   declarations: [
     MyApp,
@@ -29,12 +34,17 @@ import { HttpClientModule } from '@angular/common/http';
     GaleriaPage,
     GastronomiaPage,
     HistoriaPage,
-    TurismoPage
+    TurismoPage,
+    InicioPage,
+    MenuPage,
+    FiestasPage
 
   ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
+
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -48,10 +58,15 @@ import { HttpClientModule } from '@angular/common/http';
     GaleriaPage,
     GastronomiaPage,
     HistoriaPage,
-    TurismoPage
+    TurismoPage,
+    InicioPage,
+    MenuPage,
+    FiestasPage
+
   ],
   providers: [
     StatusBar,
+    NativeStorage,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GeneralDataProvider,

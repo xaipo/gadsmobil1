@@ -6,15 +6,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg-image">
   <ion-list>
-    <ion-item>
-      <ion-label>Parroquia</ion-label>
-      <ion-select [(ngModel)]="valueSelected2" >
-        <ion-option *ngFor="let item of allData" value="{{item.value}}" >{{item.nombre}}</ion-option>
 
-      </ion-select>
-    </ion-item>
 
     <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
         {{item.value}}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ActividadesPage page.
+ * Generated class for the FiestasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,28 +10,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-actividades',
-  templateUrl: 'actividades.html',
+  selector: 'page-fiestas',
+  templateUrl: 'fiestas.html',
 })
-export class ActividadesPage {
-
+export class FiestasPage {
   value:any;
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams
-               ) {
-
-    this.value = navParams.get('item');
+  items:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.items = navParams.get('item').fiestas;
     console.log(this.value);
-
-
-
   }
 
   ionViewDidLoad() {
-
-
-
-
+    console.log('ionViewDidLoad FiestasPage');
   }
 
 }

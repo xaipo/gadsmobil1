@@ -8,24 +8,25 @@ import {GaleriaPage} from "../galeria/galeria";
 import {GastronomiaPage} from "../gastronomia/gastronomia";
 import {HistoriaPage} from "../historia/historia";
 import {TurismoPage} from "../turismo/turismo";
-import {GeneralDataProvider}from "../../providers/general-data/general-data"
+import {FiestasPage} from "../fiestas/fiestas";
+
 
 
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers:[GeneralDataProvider]
+
 })
 export class HomePage {
 
   valueSelected: any;
   valueSelected2:any;
   items: any =[];
-   allData:any=[] ;
+
   data:any;
-  
-  constructor(public navCtrl: NavController,public navParams: NavParams, public generalProvider: GeneralDataProvider) {
+
+  constructor(public navCtrl: NavController,public navParams: NavParams) {
 
 
 
@@ -37,8 +38,10 @@ export class HomePage {
       {id:6,value:"Turismo"},
       {id:7,value:"Historia"},
       {id:8,value:"Galería"},
+      {id:9,value:"Fiestas"},
       ];
-
+    this.valueSelected2 = navParams.get('item');
+    //console.log(this.value);
 
 
     /*this.generalProvider.load.then(data=>{
@@ -48,30 +51,14 @@ export class HomePage {
     });
 */
 
-    this.valueSelected={id:1,value:"Datos Generales"};
+    //this.valueSelected={id:1,value:"Datos Generales"};
   }
 
 
   ionViewDidLoad() {
 
 
-    this.generalProvider.load()
-      .then(data => {
-        //
-        this.allData=[];
 
-          this.data = data;
-
-          var n= this.data.length;
-          for(var i=0; i<n;i++){
-
-            this.allData.push({nombre:this.data[i].nombre , value:JSON.stringify(this.data[i])});
-
-          }
-          this.valueSelected2={nombre:this.data[0].nombre,value:JSON.stringify(this.data[0])};
-          console.log(this.allData);
-
-      });
 
 
   }
@@ -82,28 +69,34 @@ export class HomePage {
     switch (item.id)
     {
       case 1:this.navCtrl.push(DatosGeneralesPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
       });break;
       case 2:this.navCtrl.push(AutoridadesPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
       });break;
       case 3:this.navCtrl.push(BarriosPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
       });break;
       case 4:this.navCtrl.push(ActividadesPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
       });break;
       case 5:this.navCtrl.push(GastronomiaPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
       });break;
       case 6:this.navCtrl.push(TurismoPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
       });break;
       case 7:this.navCtrl.push(HistoriaPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
       });break;
       case 8:this.navCtrl.push(GaleriaPage,{
-        item:JSON.parse(this.valueSelected2)
+        item:this.valueSelected2
+      });break;
+      case 9:
+        alert(JSON.stringify(this.valueSelected2));
+        this.navCtrl.push(FiestasPage,{
+        item:this.valueSelected2
+
       });break;
 
 

@@ -1,5 +1,5 @@
 <!--
-  Generated template for the BarriosPage page.
+  Generated template for the FiestasPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,23 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Barrios/Comunidades</ion-title>
+    <ion-title>Fiestas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding class="bg-image">
-  <ion-card>
 
-    <ion-card-content  *ngFor="let item of value.barrio">
+
+<ion-content padding class="bg-image">
+  <ion-card *ngFor="let item of items">
+
+    <ion-card-content>
       <ion-card-title>
-        {{item.descripcion}}
+        Fiestas
       </ion-card-title>
       <p>
-        {{item.presidente}}<br>
-        {{item.nroHabitantes}}<br>
-        {{item.altitud}}<br>
-
+        {{item.nombre}}<br>
+        {{item.descripcion}}
       </p>
     </ion-card-content>
   </ion-card>
