@@ -38,6 +38,7 @@ export class InicioPage {
 
   redirect() {
     // this.navCtrl.push(MenuPage)
+    //redireccion
     this.nativeStorage.setItem('inicio', '1')
       .then(
         () => this.navCtrl.push(MenuPage),
