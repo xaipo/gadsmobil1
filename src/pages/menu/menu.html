@@ -13,10 +13,10 @@
 </ion-header>
 
 <ion-content padding class="bg-image">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
-
-    <button ion-item *ngFor="let item of allData" (click)="itemSelected(item)">
+    <ion-item ion-item *ngFor="let item of allData" (click)="itemSelected(item)">
       {{item.nombre}}
-    </button>
+    </ion-item>
   </ion-list>
 </ion-content>

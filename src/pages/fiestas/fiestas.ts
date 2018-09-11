@@ -17,8 +17,7 @@ export class FiestasPage {
   value:any;
   items:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.items = navParams.get('item').fiestas;
-    console.log(this.value);
+    this.value = navParams.get('item');
   }
 
   ionViewDidLoad() {

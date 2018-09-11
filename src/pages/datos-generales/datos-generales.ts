@@ -17,7 +17,6 @@ export class DatosGeneralesPage {
   value:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.value = navParams.get('item');
-    console.log(this.value);
   }
   
 

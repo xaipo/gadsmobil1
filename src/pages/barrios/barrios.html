@@ -15,15 +15,14 @@
 <ion-content padding class="bg-image">
   <ion-card>
 
-    <ion-card-content  *ngFor="let item of value.barrio">
+    <ion-card-content *ngFor="let item of value.barrio">
       <ion-card-title>
-        {{item.descripcion}}
+        {{item.presidente}}<br>
       </ion-card-title>
       <p>
-        {{item.presidente}}<br>
-        {{item.nroHabitantes}}<br>
-        {{item.altitud}}<br>
-
+        <label for=""><b>N. Habitantes: </b></label>{{item.nroHabitantes}}<br>
+        <label for=""><b>Altitud: </b></label>{{item.altitud}}<br>
+        <label for=""><b>Descripción: </b></label>{{item.descripcion}}
       </p>
     </ion-card-content>
   </ion-card>

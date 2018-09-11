@@ -15,15 +15,14 @@
 
 
 <ion-content padding class="bg-image">
-  <ion-card *ngFor="let item of items">
+  <ion-card *ngFor="let item of value.fiestas">
 
     <ion-card-content>
       <ion-card-title>
-        Fiestas
+        {{item.nombre}}<br>
       </ion-card-title>
       <p>
-        {{item.nombre}}<br>
-        {{item.descripcion}}
+        <label for=""><b>Descripción: </b></label>{{item.descripcion}}
       </p>
     </ion-card-content>
   </ion-card>

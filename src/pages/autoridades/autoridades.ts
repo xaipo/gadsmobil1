@@ -14,10 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'autoridades.html',
 })
 export class AutoridadesPage {
-  value:any;
+  value: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.value = navParams.get('item');
-    console.log(this.value);
   }
 
   ionViewDidLoad() {

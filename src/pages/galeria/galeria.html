@@ -13,20 +13,13 @@
 </ion-header>
 
 <ion-content padding class="bg-image">
-<ion-slides pager>
-  <ion-slide *ngFor="let item of value.galeria" >
-    <div class="diag" >
-      <img src="{{item.source}}"/><br>
-      {{item.title}}<br>
-      {{item.alt}}<br>
-
-    </div>
-
-  </ion-slide>
-
-
-</ion-slides>
+  <ion-slides pager>
+    <ion-slide *ngFor="let item of value.galeria">
+      <div class="diag">
+        <img src="{{item.source}}" /><br>
+        {{item.title}}<br>
+        {{item.alt}}<br>
+      </div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
-
-
-

@@ -19,7 +19,7 @@ export class GeneralDataProvider {
 
       // don't have the data yet
     return new Promise(resolve => {
-       this.http.get('http://192.168.1.17:3000/api/parroquia')
+       this.http.get('http://192.168.0.141:3000/api/parroquia')
           .subscribe(data => {
          //  console.log('my data: ', data[0]);
             resolve(data);

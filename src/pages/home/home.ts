@@ -28,8 +28,6 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,public navParams: NavParams) {
 
-
-
     this.items=[{id:1,value:"Datos Generales"},
       {id:2, value:"Autoridades"},
       {id:3, value:"Barrios/Comunidades"},
@@ -93,14 +91,9 @@ export class HomePage {
         item:this.valueSelected2
       });break;
       case 9:
-        alert(JSON.stringify(this.valueSelected2));
         this.navCtrl.push(FiestasPage,{
         item:this.valueSelected2
-
       });break;
-
-
-
     }
   }
 
@@ -118,8 +111,7 @@ export class HomePage {
       case 6:this.navCtrl.push(TurismoPage);break;
       case 7:this.navCtrl.push(HistoriaPage);break;
       case 8:this.navCtrl.push(GaleriaPage);break;
-
-
+      case 9:this.navCtrl.push(FiestasPage);break;
 
     }
   }

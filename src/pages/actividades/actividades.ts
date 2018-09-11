@@ -15,16 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ActividadesPage {
 
-  value:any;
+  value: any;
   constructor(public navCtrl: NavController,
-              public navParams: NavParams
-               ) {
-
+    public navParams: NavParams
+  ) {
     this.value = navParams.get('item');
-    console.log(this.value);
-
-
-
   }
 
   ionViewDidLoad() {

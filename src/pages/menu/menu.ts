@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import {HomePage} from "../home/home";
-import {GeneralDataProvider} from "../../providers/general-data/general-data";
+import { HomePage } from "../home/home";
+import { GeneralDataProvider } from "../../providers/general-data/general-data";
 
 /**
  * Generated class for the MenuPage page.
@@ -14,46 +14,56 @@ import {GeneralDataProvider} from "../../providers/general-data/general-data";
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',
-  providers:[GeneralDataProvider]
+  providers: [GeneralDataProvider]
 })
 export class MenuPage {
-  allData:any=[] ;
-  data:any={} ;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private generalProvider:GeneralDataProvider,private viewCtrl: ViewController) {
+
+  allData: any = [];
+  allDataBK: any = [];
+  data: any = {};
+  searchQuery: string = '';
+  items: string[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private generalProvider: GeneralDataProvider, private viewCtrl: ViewController) {
 
   }
 
   ionViewDidLoad() {
-
     this.generalProvider.load()
       .then(data => {
         //
-        this.allData=[];
-
+        this.allDataBK = [];
         this.data = data;
-
-        var n= this.data.length;
-        for(var i=0; i<n;i++){
-
-          this.allData.push(this.data[i]);
-
-        }
-
-
+        var n = this.data.length;
+        this.allDataBK = data;
+        this.allData = this.allDataBK;
       });
   }
-  ionViewWillEnter() {
-    this.viewCtrl.showBackButton(false);
+
+  cargar() {
+    this.allData = this.allDataBK;
   }
 
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.cargar();
 
-  public itemSelected(item){
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.allData = this.allData.filter((item) => {
+        return (item.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  public itemSelected(item) {
     //alert(item.id)
     // alert(this.valueSelected);
-
-    this.navCtrl.push(HomePage,{
-       item
-      });
-
+    this.navCtrl.push(HomePage, {
+      item
+    });
   }
 }

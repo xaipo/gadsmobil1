@@ -17,17 +17,17 @@
 <ion-content padding class="bg-image">
   <ion-card>
 
-    <ion-card-content  *ngFor="let item of value.autoridad">
+    <ion-card-content *ngFor="let item of value.autoridad">
       <ion-card-title>
         {{item.nombre}}
       </ion-card-title>
       <p>
-        {{item.cedula}}<br>
-        {{item.cargo}}<br>
-        {{item.fechaFiliacion}}<br>
-        {{item.telefono}}<br>
-        {{item.correo}}<br>
-        {{item.profesion}}
+        <label for=""><b>Cédula: </b></label>{{item.cedula}}<br>
+        <label for=""><b>Cargo: </b></label>{{item.cargo}}<br>
+        <label for=""><b>Fecha: </b></label>{{item.fechaFiliacion}}<br>
+        <label for=""><b>Teléfono: </b></label>{{item.telefono}}<br>
+        <label for=""><b>Email: </b></label>{{item.correo}}<br>
+        <label for=""><b>Profesión: </b></label>{{item.profesion}}
       </p>
     </ion-card-content>
   </ion-card>

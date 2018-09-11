@@ -1,15 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-    GAD MANAGER
+    GAD MANAGER DATOS
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-image">
   <ion-list>
-
-
     <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
         {{item.value}}
     </button>
